@@ -1,8 +1,8 @@
-# Here all the data sets are defined by using simple YAML syntax.
-#
-# Documentation for this file format can be found in "The Data Catalog"
-# Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
+""" 
+In this file all the data sets are defined by using simple YAML syntax.
+"""
 
+# Inputs: raw datasets
 companies:
   type: pandas.CSVDataSet
   filepath: data/01_raw/companies.csv
@@ -14,3 +14,12 @@ reviews:
 shuttles:
   type: pandas.ExcelDataSet
   filepath: data/01_raw/shuttles.xlsx
+
+# Outputs: intermediate datasets after processing data from raw inputs
+preprocessed_companies:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/preprocessed_companies.csv
+
+preprocessed_shuttles:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/preprocessed_shuttles.csv
